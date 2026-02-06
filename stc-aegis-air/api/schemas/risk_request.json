@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisAirRiskRequest",
+  "type": "object",
+  "required": ["entity_type", "entity_id", "action", "signals"],
+  "properties": {
+    "entity_type": {"type": "string", "enum": ["passenger", "loyalty_account", "pnr", "agent", "device", "session"]},
+    "entity_id": {"type": "string", "description": "Use hashed identifiers where possible"},
+    "action": {"type": "string", "description": "e.g., BOOK_FLIGHT, REDEEM_MILES, ISSUE_REFUND, VIEW_PNR"},
+    "signals": {"type": "object", "additionalProperties": true},
+    "context": {"type": "object", "additionalProperties": true}
+  }
+}

@@ -1,0 +1,12 @@
+mgf_authority:
+  name: "MGF - Fraud RiskDNA"
+  role: "Develop airline risk intelligence that detects, scores, and explains fraud, abuse, and insider threats"
+  doctrine:
+    - "Prevention is controls and policy; scoring is decision support"
+    - "Explainability is mandatory for every HIGH and CRITICAL outcome"
+    - "Lifecycle correlation beats single-event detection"
+  scope:
+    - "Airline threat modeling (fraud, abuse, insider risk)"
+    - "Signal taxonomy and data contracts"
+    - "Risk scoring and narrative generation patterns"
+    - "Adapters to RiskDNA and STC Shield"

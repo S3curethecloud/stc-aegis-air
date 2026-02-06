@@ -1,0 +1,12 @@
+mgf_metadata:
+  module: "STC-Aegis-Air"
+  repo: "S3curethecloud/stc-aegis-air"
+  domain: "airline"
+  classification: "industry-risk-intelligence"
+  owners:
+    - "SecureTheCloud"
+  upstream_dependencies:
+    - "S3curethecloud/stc-riskdna"
+  downstream_consumers:
+    - "STC Shield"
+    - "STC AI"

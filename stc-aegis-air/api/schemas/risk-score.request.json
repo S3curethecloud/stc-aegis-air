@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskScoreRequest",
+  "type": "object",
+  "required": ["entity", "action", "signals"],
+  "properties": {
+    "entity": {"type": "string"},
+    "action": {"type": "string"},
+    "signals": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+{
+  "entity_type": "loyalty_account",
+  "entity_id": "LOY-12345",
+  "event_type": "miles_redemption",
+  "signals": {
+    "new_device": true,
+    "geo_mismatch": true,
+    "velocity": "high",
+    "account_age_days": 7,
+    "redemption_value_usd": 4200
+  },
+  "context": {
+    "channel": "web",
+    "partner": "none"
+  }
+}

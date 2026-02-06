@@ -1,0 +1,16 @@
+mgf_integration:
+  stc_ai:
+    dataset_intent: "Industry module for STC AI reasoning"
+    ingestion_artifacts:
+      - "mgf/*.yaml"
+      - "threat-model/*.md"
+      - "signals/**"
+    required_fields:
+      - "risk drivers"
+      - "severity"
+      - "recommended controls"
+  apis:
+    riskdna_adapter:
+      endpoint: "/risk/score"
+      request_schema: "api/schemas/risk-score.request.json"
+      response_schema: "api/schemas/risk-score.response.json"

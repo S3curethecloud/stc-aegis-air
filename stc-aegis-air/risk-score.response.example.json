@@ -1,0 +1,21 @@
+{
+  "risk_score": 86,
+  "severity": "HIGH",
+  "drivers": [
+    "New device used during high-value loyalty redemption",
+    "Redemption occurred immediately after login",
+    "Redemption value deviates from historical norms"
+  ],
+  "risk_domains": {
+    "identity": 0.89,
+    "behavior": 0.83,
+    "value": 0.91,
+    "operational": 0.22
+  },
+  "recommended_controls": [
+    "Step-up authentication",
+    "Redemption cooldown",
+    "Manual review for loyalty adjustments"
+  ],
+  "confidence": 0.94
+}

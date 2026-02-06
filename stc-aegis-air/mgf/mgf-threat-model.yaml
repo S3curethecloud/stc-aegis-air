@@ -1,0 +1,16 @@
+mgf_threat_model:
+  principle: "Airline risk is lifecycle correlation, not single-event fraud detection"
+  lifecycle:
+    - booking
+    - loyalty
+    - checkin
+    - airport_ops
+    - refund
+    - partner
+  domains:
+    fraud:
+      description: "External, financially motivated events (ATO, miles theft, refund fraud)"
+    abuse:
+      description: "Gray-zone exploitation (bots, promotions, seat blocking, scraping)"
+    insider:
+      description: "Agent/partner misuse (PNR access, loyalty manipulation, data harvesting)"

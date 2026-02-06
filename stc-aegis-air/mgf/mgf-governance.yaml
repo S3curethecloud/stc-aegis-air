@@ -1,0 +1,18 @@
+mgf_governance:
+  authority: "MGF - Fraud RiskDNA"
+  system: "STC AI Intelligence Core"
+  module: "STC-Aegis-Air"
+  constraints:
+    - "No opaque decisions (black-box-only scoring is disallowed)"
+    - "Every score must include drivers (top factors)"
+    - "HIGH/CRITICAL outputs must include an executive narrative"
+  integration_contract:
+    consumes:
+      - "riskdna.score"
+      - "riskdna.severity"
+      - "riskdna.drivers"
+      - "riskdna.entities"
+    produces:
+      - "aegisair.lifecycle_timeline"
+      - "aegisair.executive_narrative"
+      - "aegisair.recommended_controls"

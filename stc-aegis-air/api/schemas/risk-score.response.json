@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskScoreResponse",
+  "type": "object",
+  "required": ["risk_score", "severity", "drivers"],
+  "properties": {
+    "risk_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "severity": {"type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+    "drivers": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "additionalProperties": false
+}

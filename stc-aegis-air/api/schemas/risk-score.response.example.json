@@ -1,0 +1,11 @@
+{
+  "risk_score": 82,
+  "severity": "HIGH",
+  "drivers": [
+    "New device + high-value redemption",
+    "Geo mismatch with recent login history",
+    "High velocity activity consistent with automation"
+  ],
+  "recommended_action": "STEP_UP",
+  "narrative": "High likelihood of loyalty account takeover; require step-up verification before redemption and route to fraud review if verification fails."
+}
