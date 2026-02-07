@@ -1,16 +1,55 @@
 mgf_integration:
-  stc_ai:
-    dataset_intent: "Industry module for STC AI reasoning"
-    ingestion_artifacts:
-      - "mgf/*.yaml"
-      - "threat-model/*.md"
-      - "signals/**"
-    required_fields:
-      - "risk drivers"
-      - "severity"
-      - "recommended controls"
-  apis:
-    riskdna_adapter:
-      endpoint: "/risk/score"
-      request_schema: "api/schemas/risk-score.request.json"
-      response_schema: "api/schemas/risk-score.response.json"
+  module_name: "STC-Aegis-Air"
+  module_type: "Industry Risk Intelligence"
+  industry: "Airline"
+
+  authority:
+    mgf_authority: "MGF - Fraud RiskDNA"
+    scope:
+      - airline_fraud
+      - airline_abuse
+      - airline_insider_risk
+
+  ingestion:
+    mode: "read-only"
+    sources:
+      - risk-score.request.json
+      - risk-score.response.json
+      - risk_request.json
+    examples:
+      - risk-score.request.example.json
+      - risk-score.response.example.json
+
+  reasoning_constraints:
+    web_access: false
+    training: false
+    mutation: false
+    live_scanning: false
+
+  reasoning_scope:
+    allowed:
+      - risk_explanation
+      - risk_driver_analysis
+      - lifecycle_correlation
+      - executive_narrative
+    forbidden:
+      - blocking_actions
+      - enforcement
+      - automated_decision_execution
+
+  outputs:
+    - risk_score
+    - severity
+    - drivers
+    - narrative
+    - recommended_action
+
+  downstream_consumers:
+    - STC_Shield
+    - Executive_Dashboards
+    - Fraud_Operations
+
+  compliance:
+    explainability_required: true
+    audit_safe: true
+    deterministic_required: true
