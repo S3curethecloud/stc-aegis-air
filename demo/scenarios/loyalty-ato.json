@@ -1,0 +1,25 @@
+{
+  "scenario": "Loyalty Account Takeover",
+  "entity_type": "loyalty_account",
+  "entity_id": "LOY-88421",
+  "risk_score": 82,
+  "severity": "HIGH",
+  "drivers": [
+    "New device used during high-value loyalty redemption",
+    "Redemption occurred immediately after login",
+    "Redemption value deviates from historical norms"
+  ],
+  "risk_domains": {
+    "identity": 0.88,
+    "behavior": 0.84,
+    "value": 0.91
+  },
+  "recommended_action": "STEP_UP",
+  "narrative": "Indicators strongly suggest loyalty account takeover. Require step-up verification before redemption and route to fraud review if verification fails.",
+  "confidence": 0.94,
+  "timeline": [
+    {"event": "login", "note": "New device detected"},
+    {"event": "password_reset", "note": "Reset within same session"},
+    {"event": "miles_redeemed", "note": "High-value redemption"}
+  ]
+}

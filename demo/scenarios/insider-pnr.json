@@ -1,0 +1,24 @@
+{
+  "scenario": "Insider PNR Access Abuse",
+  "entity_type": "agent_identity",
+  "entity_id": "AGENT-4421",
+  "risk_score": 91,
+  "severity": "CRITICAL",
+  "drivers": [
+    "After-hours access to multiple unrelated PNRs",
+    "Access scope exceeds peer baseline",
+    "Repeated manual overrides without ticket ownership"
+  ],
+  "risk_domains": {
+    "identity": 0.86,
+    "operational": 0.95
+  },
+  "recommended_action": "INVESTIGATE",
+  "narrative": "Agent activity strongly deviates from role expectations and peer norms. Immediate investigation recommended.",
+  "confidence": 0.97,
+  "timeline": [
+    {"event": "pnr_accessed", "note": "Outside shift hours"},
+    {"event": "manual_override", "note": "Fare rule bypass"},
+    {"event": "pnr_accessed", "note": "Unrelated passenger"}
+  ]
+}

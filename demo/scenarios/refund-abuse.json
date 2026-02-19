@@ -1,0 +1,24 @@
+{
+  "scenario": "Refund Abuse Pattern",
+  "entity_type": "passenger_identity",
+  "entity_id": "PAX-19377",
+  "risk_score": 67,
+  "severity": "MEDIUM",
+  "drivers": [
+    "Repeated refund requests across multiple channels",
+    "Refund timing clustered just below manual review thresholds",
+    "Behavior consistent with policy abuse rather than error"
+  ],
+  "risk_domains": {
+    "behavior": 0.79,
+    "value": 0.62
+  },
+  "recommended_action": "COOLDOWN",
+  "narrative": "Passenger exhibits repeated refund-seeking behavior indicative of abuse. Apply refund cooldown and flag account for monitoring.",
+  "confidence": 0.88,
+  "timeline": [
+    {"event": "booking_created", "note": "Multiple short-haul bookings"},
+    {"event": "refund_requested", "note": "Web channel"},
+    {"event": "refund_requested", "note": "Call center"}
+  ]
+}
